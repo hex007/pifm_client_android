@@ -145,7 +145,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 			new RequestTask(url).execute();
 			Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
 			// Vibrate for 500 milliseconds
-			v.vibrate(500);
+			v.vibrate(200);
 		} else
 			System.out.println("Unknown click");
 	}
@@ -253,7 +253,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 		@Override
 		protected void onCancelled(String s) {
-			if (url.contains("/subscribe")) {
+			if (url.endsWith("/collection")) {
 				Snackbar.make(getWindow().getDecorView(), "No connection ...", Snackbar.LENGTH_INDEFINITE)
 						.setAction("Try again", new View.OnClickListener() {
 							@Override

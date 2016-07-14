@@ -123,6 +123,7 @@ public class Downloader {
 		HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 		connection.setRequestProperty("User-Agent", UA);
 		connection.setRequestProperty("Accept", "text/html");
+		connection.setConnectTimeout(500);
 
 		return connection;
 	}
